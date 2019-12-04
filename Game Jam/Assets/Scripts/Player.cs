@@ -38,6 +38,12 @@ public class Player : MonoBehaviour
     void FireSAM()
     {
         Instantiate(missile, transform.position, transform.rotation);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100))
+        {
+            Debug.Log(hit.transform.gameObject.name);
+        }
     }
 
     void FireSAW()

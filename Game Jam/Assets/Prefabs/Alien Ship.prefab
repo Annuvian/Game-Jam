@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  laser: {fileID: 7117439528463831245, guid: ab41f4aa0afb3574eb4ca1034f9c94d5, type: 3}
 --- !u!61 &7598385060107825895
 BoxCollider2D:
   m_ObjectHideFlags: 0

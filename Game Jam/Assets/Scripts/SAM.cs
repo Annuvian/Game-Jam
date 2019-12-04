@@ -18,9 +18,9 @@ public class SAM : MonoBehaviour
     void Update()
     {
         rb.AddForce(transform.up * thrust);
-        Vector2 direction = target.position - transform.position;
+        /*Vector2 direction = target.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);*/
     }
 }
