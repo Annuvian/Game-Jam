@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5244743598841620028}
   - component: {fileID: 1628508727771492578}
   - component: {fileID: 4052149937135801309}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AA Gun
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8907c51fa9fc64fb4572b8e7bf1771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  missile: {fileID: 8313004896333985839, guid: ff4070aef2a3cc548addd60ad1765bc4, type: 3}
+  aabullet: {fileID: 5611991896871573145, guid: 3a407618ab7000143a3cc07a1f55b3ff,
+    type: 3}
 --- !u!61 &4052149937135801309
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7117439528463831244}
   - component: {fileID: 179415463}
   - component: {fileID: 1255076940800303504}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plasma
   m_TagString: Plasma
   m_Icon: {fileID: 0}
