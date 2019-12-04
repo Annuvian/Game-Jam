@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Alien : MonoBehaviour
+public class Plasma : MonoBehaviour
 {
-    public int health = 100;
     // Start is called before the first frame update
     void Start()
     {

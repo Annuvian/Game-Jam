@@ -15,4 +15,19 @@ public class Player : MonoBehaviour
     {
         
     }
+
+    void FireAAGun()
+    {
+
+    }
+
+    void FireSAM()
+    {
+
+    }
+
+    void FireSAW()
+    {
+
+    }
 }
