@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8227120702927822903}
   - component: {fileID: 892476883}
   - component: {fileID: 8227120702612078054}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Alien Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
