@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2399586249701668385}
   - component: {fileID: 2399586249701668386}
   - component: {fileID: 2470638257136508039}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BuildingB
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -146,5 +146,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 4}
+  m_Size: {x: 0.1, y: 4}
   m_EdgeRadius: 0

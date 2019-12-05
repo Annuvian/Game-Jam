@@ -6,7 +6,7 @@ public class SAM : MonoBehaviour
 {
     public Transform target;
     private Rigidbody2D rb;
-    public float thrust = 3.0f;
+    public float thrust = 5.0f;
     public float speed = 5f;
     // Start is called before the first frame update
     void Start()

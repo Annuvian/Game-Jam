@@ -7,11 +7,11 @@ public class Alien : MonoBehaviour
     public int health = 100;
     public GameObject laser;
     public float speed;
-    public float leftLimit = -8.7f;
-    public float rightLimit = 8.7f;
-    public bool left;
+    private float leftLimit = -8.7f;
+    private float rightLimit = 8.7f;
+    private bool left;
     public float xPos;
-    public bool inShot = false;
+    private bool inShot = false;
     public GameObject myspawner;
     public AlienSpawner spawner;
     private float timer = 0;
