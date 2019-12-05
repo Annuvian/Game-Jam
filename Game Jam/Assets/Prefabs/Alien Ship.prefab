@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8227120702927822896}
   - component: {fileID: 8227120702927822903}
-  - component: {fileID: 892476883}
   - component: {fileID: 8227120702612078054}
+  - component: {fileID: 7166768307549759876}
   m_Layer: 11
   m_Name: Alien Ship
   m_TagString: Untagged
@@ -82,20 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &892476883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8227120702927822902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aca7d3e6988bd674db88a688e10fc04d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  laser: {fileID: 7117439528463831245, guid: ab41f4aa0afb3574eb4ca1034f9c94d5, type: 3}
 --- !u!68 &8227120702612078054
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -135,3 +121,23 @@ EdgeCollider2D:
   - {x: 2.0226116, y: -0.13508892}
   - {x: 2.5428915, y: 0.25574255}
   - {x: 2.6274595, y: 0.52330303}
+--- !u!114 &7166768307549759876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227120702927822902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca7d3e6988bd674db88a688e10fc04d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  laser: {fileID: 7117439528463831245, guid: ab41f4aa0afb3574eb4ca1034f9c94d5, type: 3}
+  speed: 0
+  leftLimit: -8.7
+  rightLimit: 8.7
+  left: 0
+  xPos: 0
+  inShot: 0

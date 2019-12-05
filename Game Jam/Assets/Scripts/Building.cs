@@ -16,4 +16,17 @@ public class Building : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Plasma")
+        {
+            Destroy(collision.gameObject);
+            health -= 5;
+            if (health <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+    }
 }
