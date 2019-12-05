@@ -8,6 +8,7 @@ TagManager:
   - AARound
   - Zombie
   - Plasma
+  - Building
   layers:
   - Default
   - TransparentFX

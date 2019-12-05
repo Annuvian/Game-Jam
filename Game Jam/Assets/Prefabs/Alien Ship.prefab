@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8227120702927822896}
   - component: {fileID: 8227120702927822903}
   - component: {fileID: 8227120702612078054}
-  - component: {fileID: 7166768307549759876}
+  - component: {fileID: 3747165487606124623}
+  - component: {fileID: -7096397439725921103}
   m_Layer: 11
   m_Name: Alien Ship
   m_TagString: Untagged
@@ -121,7 +122,7 @@ EdgeCollider2D:
   - {x: 2.0226116, y: -0.13508892}
   - {x: 2.5428915, y: 0.25574255}
   - {x: 2.6274595, y: 0.52330303}
---- !u!114 &7166768307549759876
+--- !u!114 &3747165487606124623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,3 +142,26 @@ MonoBehaviour:
   left: 0
   xPos: 0
   inShot: 0
+  myspawner: {fileID: 0}
+  spawner: {fileID: 0}
+--- !u!50 &-7096397439725921103
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227120702927822902}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

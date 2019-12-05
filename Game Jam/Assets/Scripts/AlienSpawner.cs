@@ -7,8 +7,6 @@ public class AlienSpawner : MonoBehaviour
     public GameObject ship;
 
     public bool isSpawned = false;
-    public float spawnDelay;
-    public float timer = 0;
     // Start is called before the first frame update
     void Start()
     {

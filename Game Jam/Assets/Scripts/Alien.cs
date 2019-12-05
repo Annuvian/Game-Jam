@@ -14,6 +14,9 @@ public class Alien : MonoBehaviour
     public bool inShot = false;
     public GameObject myspawner;
     public AlienSpawner spawner;
+    private float timer = 0;
+    private float fireRate = 1f;
+    private bool justFired = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,9 +55,14 @@ public class Alien : MonoBehaviour
         {
             inShot = true;
         }
-        if (Input.GetButtonDown("Fire1"))
+        if (justFired)
         {
-            FirePlasma();
+            timer += 1 * Time.deltaTime;
+            if (timer >= fireRate)
+            {
+                timer = 0;
+                justFired = false;
+            }
         }
         if (left)
         {
@@ -93,8 +101,16 @@ public class Alien : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Building" && !justFired)
+        {
+            FirePlasma();
+        }
+    }
     void FirePlasma()
     {
         Instantiate(laser, new Vector3(transform.position.x, transform.position.y - 0.2f, -2), transform.rotation);
+        justFired = true;
     }
 }
