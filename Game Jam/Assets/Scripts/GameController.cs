@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject ship;
+    public GameObject zombie;
     // Start is called before the first frame update
     void Start()
     {
