@@ -98,6 +98,22 @@ MonoBehaviour:
   aabullet: {fileID: 5611991896871573145, guid: 3a407618ab7000143a3cc07a1f55b3ff,
     type: 3}
   speed: 5
+  cannonReloading: 0
+  samReloading: 0
+  totalCannonAmmo: 2700
+  cannonAmmoCapacity: 300
+  totalSAMAmmo: 80
+  samAmmoCapacity: 20
+  cannonAmmo: 0
+  samAmmo: 0
+  cannonReloadTimer: 0
+  cannonReloadTime: 5
+  samReloadTimer: 0
+  samReloadTime: 10
+  TCA: {fileID: 0}
+  CCM: {fileID: 0}
+  TSA: {fileID: 0}
+  CSL: {fileID: 0}
 --- !u!61 &4052149937135801309
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -113,7 +129,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.38175225, y: 0.18621993}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 2.37, y: 4.0699997, z: 3.1, w: 3.6499999}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 13, y: 13}
     newSize: {x: 0.5, y: 0.5}

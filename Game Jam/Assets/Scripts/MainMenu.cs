@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
     public void Options()
     {
         SceneManager.LoadScene(1);
+
     }
 
     public void StartGame()

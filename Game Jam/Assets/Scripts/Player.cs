@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     public bool cannonReloading = false;
     public bool samReloading = false;
+    public int totalCannonAmmo = 2700;
     public int cannonAmmoCapacity = 300;
+    public int totalSAMAmmo = 80;
     public int samAmmoCapacity = 20;
     public int cannonAmmo;
     public int samAmmo;
@@ -17,11 +20,22 @@ public class Player : MonoBehaviour
     public float cannonReloadTime = 5f;
     public float samReloadTimer = 0;
     public float samReloadTime = 20f;
+
+    // UI Stuff
+    public Text TCA;
+    public Text CCM;
+    public Text TSA;
+    public Text CSL;
+
     // Start is called before the first frame update
     void Start()
     {
         cannonAmmo = cannonAmmoCapacity;
         samAmmo = samAmmoCapacity;
+        TCA.text = "Spare Cannon Ammo: " + totalCannonAmmo.ToString();
+        CCM.text = "Current Cannon Magazine: " + cannonAmmo.ToString();
+        TSA.text = "Spare SAM Ammo: " + totalSAMAmmo.ToString();
+        CSL.text = "Current SAMs Loaded: " + samAmmo.ToString();
     }
 
     // Update is called once per frame
@@ -30,17 +44,25 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Fire2") && !samReloading && samAmmo > 0)
         {
             FireSAM();
-            if (samAmmo == 0)
+            if (samAmmo == 0 && totalSAMAmmo >= samAmmoCapacity)
             {
                 samReloading = true;
+                CSL.text = "Current SAMs Loaded: RELOADING";
+            } else if (samAmmo == 0 && totalSAMAmmo == 0)
+            {
+                CSL.text = "Current SAMs Loaded: EMPTY";
             }
         }
         if (Input.GetButton("Fire1") && !cannonReloading && cannonAmmo > 0)
         {
             FireAAGun();
-            if (cannonAmmo == 0)
+            if (cannonAmmo == 0 && totalCannonAmmo >= cannonAmmoCapacity)
             {
+                CCM.text = "Current Cannon Magazine: RELOADING";
                 cannonReloading = true;
+            } else if (cannonAmmo == 0 && totalCannonAmmo == 0)
+            {
+                CCM.text = "Current Cannon Magazine: EMPTY";
             }
         }
         if (cannonReloading)
@@ -50,7 +72,10 @@ public class Player : MonoBehaviour
             {
                 cannonReloadTimer = 0;
                 cannonReloading = false;
+                totalCannonAmmo -= cannonAmmoCapacity;
                 cannonAmmo = cannonAmmoCapacity;
+                CCM.text = "Current Cannon Magazine: " + cannonAmmo.ToString();
+                TCA.text = "Spare Cannon Ammo: " + totalCannonAmmo.ToString();
             }
         }
         if (samReloading)
@@ -60,7 +85,10 @@ public class Player : MonoBehaviour
             {
                 samReloadTimer = 0;
                 samReloading = false;
+                totalSAMAmmo -= samAmmoCapacity;
                 samAmmo = samAmmoCapacity;
+                TSA.text = "Spare SAM Ammo: " + totalSAMAmmo.ToString();
+                CSL.text = "Current SAMs Loaded: " + samAmmo.ToString();
             }
         }
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -73,12 +101,14 @@ public class Player : MonoBehaviour
     {
         Instantiate(aabullet, transform.position, transform.rotation);
         cannonAmmo -= 1;
+        CCM.text = "Current Cannon Magazine: " + cannonAmmo.ToString();
     }
 
     void FireSAM()
     {
         Instantiate(missile, transform.position, transform.rotation);
         samAmmo -= 1;
+        CSL.text = "Current SAMs Loaded: " + samAmmo.ToString();
     }
 
     void FireSAW()
