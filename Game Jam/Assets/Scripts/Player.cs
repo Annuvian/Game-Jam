@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Player : MonoBehaviour
 {
+    public GameController gc;
     public GameObject missile;
     public GameObject aabullet;
     public float speed = 5f;
@@ -20,6 +22,7 @@ public class Player : MonoBehaviour
     public float cannonReloadTime = 5f;
     public float samReloadTimer = 0;
     public float samReloadTime = 20f;
+    public bool allowInput = true;
 
     // UI Stuff
     public Text TCA;
@@ -41,7 +44,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire2") && !samReloading && samAmmo > 0)
+        if (Input.GetButtonDown("Fire2") && !samReloading && samAmmo > 0 && allowInput)
         {
             FireSAM();
             if (samAmmo == 0 && totalSAMAmmo >= samAmmoCapacity)
@@ -53,7 +56,7 @@ public class Player : MonoBehaviour
                 CSL.text = "Current SAMs Loaded: EMPTY";
             }
         }
-        if (Input.GetButton("Fire1") && !cannonReloading && cannonAmmo > 0)
+        if (Input.GetButton("Fire1") && !cannonReloading && cannonAmmo > 0 && allowInput)
         {
             FireAAGun();
             if (cannonAmmo == 0 && totalCannonAmmo >= cannonAmmoCapacity)
@@ -90,6 +93,11 @@ public class Player : MonoBehaviour
                 TSA.text = "Spare SAM Ammo: " + totalSAMAmmo.ToString();
                 CSL.text = "Current SAMs Loaded: " + samAmmo.ToString();
             }
+        }
+        if ((cannonAmmo == 0 && totalCannonAmmo == 0) && (samAmmo == 0 && totalSAMAmmo == 0))
+        {
+            gc.gameOverText.text = "You have run out of all ammunition. You managed to fend off the invasion for " + Math.Round(gc.score).ToString() + " seconds, giving the survivors valuable time to escape!";
+            gc.GameOver();
         }
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;

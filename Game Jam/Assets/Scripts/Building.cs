@@ -5,6 +5,7 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     public int health = 100;
+    public GameController gc;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class Building : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(this.gameObject);
+                gc.buildingsRemaining -= 1;
             }
         }
     }
