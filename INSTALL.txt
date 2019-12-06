@@ -1,0 +1,6 @@
+If you are on PC, just download the WindowsBuild.zip file, extract it and run the GameJam.exe application, you do NOT need
+to have the Unity game engine installed on your computer.
+
+If you are on MAC, download the MacBuild.zip file and do whatever you need to do to run it on a Mac because I have no idea.
+
+Enjoy!
